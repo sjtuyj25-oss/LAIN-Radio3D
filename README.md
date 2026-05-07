@@ -1,5 +1,5 @@
 # LAIN-Radio3D
-low-altitude intelligent network Radio3D dataset
+Low-altitude intelligent network Radio3D dataset
 
 ## Description
 
@@ -20,8 +20,78 @@ low-altitude intelligent network Radio3D dataset
 
 ## Data Alignment
 
-Each sample is spatially aligned across all modalities:
+All data modalities are strictly aligned through a unified naming convention.
 
-* antennas[i] ↔ gain[i] ↔ building information
-* antennas_test[i] ↔ gain_test[i] ↔ building information
+### File Naming Rule
+
+Each sample follows the format:
+
+```
+<sceneID>_000_pos_<x>_<y>_<z>.png
+```
+
+For example:
+
+```
+601_000_pos_209_216_7.png
+```
+
+* **sceneID (e.g., 601)**:
+  Identifies the environment scene, corresponding to the building information.
+
+* **(x, y, z) = (209, 216, 7)**:
+  3D coordinates of the transmitter.
+
+---
+
+### Data Correspondence
+
+For a given filename:
+
+```
+601_000_pos_209_216_7.png
+```
+
+the following data are aligned:
+
+* `antennas/601_000_pos_209_216_7.png`
+* `gain/h*/601_000_pos_209_216_7.png`
+* `buildings (scene 601)`
+
+---
+
+### Height-Dependent Radio Maps
+
+Radio maps are further organized by receiver height:
+
+```
+gain/
+├── h1/
+├── h2/
+├── h3/
+...
+```
+
+* Each subfolder `h*` corresponds to a specific receiver height.
+* For a fixed scene and transmitter location, radio maps across different heights share the same filename.
+
+Example:
+
+```
+gain/h1/601_000_pos_209_216_7.png
+gain/h20/601_000_pos_209_216_7.png
+gain/h120/601_000_pos_209_216_7.png
+```
+
+These represent radio maps under identical conditions but at different receiver heights.
+
+---
+
+### Summary
+
+* Filename → determines **scene + transmitter position**
+* Folder (`h*`) → determines **receiver height**
+* Same filename across folders → **same spatial configuration**
+
+
 
