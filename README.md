@@ -82,16 +82,17 @@ gain/h1/601_000_pos_209_216_7.png
 gain/h20/601_000_pos_209_216_7.png
 gain/h120/601_000_pos_209_216_7.png
 ```
-
 These represent radio maps under identical conditions but at different receiver heights.
 
----
+## Download
 
-### Summary
+The dataset can be accessed via the following link:
 
-* Filename → determines **scene + transmitter position**
-* Folder (`h*`) → determines **receiver height**
-* Same filename across folders → **same spatial configuration**
+- Baidu Netdisk: https://pan.baidu.com/s/1IXjNHdV5-ncUBIj3XWvmMw  
+- Extraction code: sjtu
+
+After downloading, please extract the archive and organize the files according to the structure described above.
+
 
 
 
