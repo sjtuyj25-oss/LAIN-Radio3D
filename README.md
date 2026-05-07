@@ -1,14 +1,27 @@
 # LAIN-Radio3D
 low-altitude intelligent network Radio3D dataset
 
-## Dataset Structure
+## Description
 
-The dataset is organized as follows:
-dataset/
-├── antennas/              # Training set: antenna maps
-├── antennas_test/         # Test set: antenna maps
-├── gain/                  # Training set: radio maps (ground truth)
-├── gain_test/             # Test set: radio maps (ground truth)
-├── buildings/             # 3D building mesh models
-├── buildings_complete/    # Binary building occupancy maps
-├── buildings_heightmap/   # Building height maps
+* **antennas / antennas_test**:
+  Antenna configuration maps for training and test sets.
+
+* **gain / gain_test**:
+  Ground-truth radio maps corresponding to each antenna configuration.
+
+* **buildings**:
+  3D mesh representations of the environment.
+
+* **buildings_complete**:
+  Binary occupancy maps indicating building presence.
+
+* **buildings_heightmap**:
+  Height maps describing vertical structure of buildings.
+
+## Data Alignment
+
+Each sample is spatially aligned across all modalities:
+
+* antennas[i] ↔ gain[i] ↔ building information
+* antennas_test[i] ↔ gain_test[i] ↔ building information
+
