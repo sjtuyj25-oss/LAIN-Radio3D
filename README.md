@@ -10,9 +10,9 @@ low-altitude intelligent network Radio3D dataset
   Ground-truth radio maps corresponding to each antenna configuration.
 
 * **buildings**:
-  3D mesh representations of the environment.
+  3D mesh representations of the environment (OBJ).
 
-* **buildings_complete**:
+* **buildings_map**:
   Binary occupancy maps indicating building presence.
 
 * **buildings_heightmap**:
